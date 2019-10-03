@@ -1,14 +1,61 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
-<div class="jumbotron jumbotron-fluid mt-5 mb-5">
+<div class="jumbotron jumbotron-fluid my-5">
     <div class="container mt-5 mb-5">
         <div class="row">
-            <div class="col-12 text-center mt-5 mb-5">
+            <div class="col-12 text-center my-5">
                 <h1 class="display-4">@lobortis</h1>
                 <p class="lead">Suspendisse tempor, mauris malesuada dapibus luctus, sem magna</p>
                 <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Works</h2>
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/image_card.svg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Donec vehicula</h4>
+                    <p class="card-text">Cras interdum, tellus non placerat dapibus, justo magna consectetur mauris.</p>
+                    <a href="#" class="card-link">bibendum</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/image_card.svg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Donec vehicula</h4>
+                    <p class="card-text">Cras interdum, tellus non placerat dapibus, justo magna consectetur mauris.</p>
+                    <a href="#" class="card-link">bibendum</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/image_card.svg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Donec vehicula</h4>
+                    <p class="card-text">Cras interdum, tellus non placerat dapibus, justo magna consectetur mauris.</p>
+                    <a href="#" class="card-link">bibendum</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/image_card.svg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Donec vehicula</h4>
+                    <p class="card-text">Cras interdum, tellus non placerat dapibus, justo magna consectetur mauris.</p>
+                    <a href="#" class="card-link">bibendum</a>
+                </div>
             </div>
         </div>
     </div>
