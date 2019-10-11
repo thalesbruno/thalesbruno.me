@@ -65,28 +65,13 @@
             </div>
         </div>
     </div>
-
+    <!-- testing new form -->
     <h2 id="contactSection">Contact</h2>
     <div class="row mb-5">
         <div class="col-9">
-            <form action="">
-                <div class="form-group">
-                    <label for="nameInput">Name</label>
-                    <input type="text" class="form-control" id="nameInput" placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label for="emailInput">Email</label>
-                    <input type="email" class="form-control" id="emailInput" placeholder="Enter your email address">
-                </div>
-                <div class="form-group">
-                    <label for="subjectInput">Subject</label>
-                    <input type="text" class="form-control" id="subjectInput" placeholder="Enter subject">
-                </div>
-                <div class="form-group">
-                    <label for="messageInput">Message</label>
-                    <textarea id="messageInput" cols="30" rows="10" class="form-control"
-                        placeholder="Enter message"></textarea>
-                </div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form }}
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>
