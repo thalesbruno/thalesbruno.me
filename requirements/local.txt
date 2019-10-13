@@ -3,3 +3,12 @@ Pillow==6.2.0
 psycopg2-binary==2.8.3
 pytz==2019.2
 sqlparse==0.3.0
+Django==2.2.5
+django-sendgrid-v5==0.8.0
+future==0.18.0
+Pillow==6.2.0
+psycopg2-binary==2.8.3
+python-http-client==3.2.1
+pytz==2019.2
+sendgrid==6.1.0
+sqlparse==0.3.0

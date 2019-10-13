@@ -128,4 +128,5 @@ dmypy.json
 .vscode/
 
 # environment variables
-env
+postgres.env
+sendgrid.env
