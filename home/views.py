@@ -21,7 +21,12 @@ def home(request):
                 email.send()
             except Exception as e:
                 print(e)
-                return redirect('home')
+                form = ContactForm()
+                context = {
+                    'form': form,
+                    'error_message': e
+                }
+                return render(request, 'home.html', context)
         return redirect('thanks')
     form = ContactForm()
     context = {

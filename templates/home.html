@@ -3,25 +3,30 @@
 
 {% block content %}
 
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+{% if error_message %}
+<div class="alert alert-danger alert-dismissible fade show m-0" role="alert">
+    <strong>Error!</strong> {{ error_message }}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<div class="jumbotron jumbotron-fluid my-5">
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="col-12 text-center my-5">
+{% endif %}
+
+<div class="jumbotron jumbotron-fluid h-50">
+    <div class="container align-self-center h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-12 text-center align-self-center">
                 <h1 class="display-4">@thalesbruno</h1>
                 <p class="lead">
                     Hi! I am a full-stack web developer.
                 </p>
                 <hr>
-                <span class="badge badge-pill py-2 badge-success">Django</span>
-                <span class="badge badge-pill py-2 badge-primary">Python</span>
-                <span class="badge badge-pill py-2 badge-warning">Javascript</span>
-                <span class="badge badge-pill py-2 badge-info">Docker</span>
+                <p class="lead">
+                    <span class="badge badge-pill py-2 badge-success">Django</span>
+                    <span class="badge badge-pill py-2 badge-primary">Python</span>
+                    <span class="badge badge-pill py-2 badge-warning">Javascript</span>
+                    <span class="badge badge-pill py-2 badge-info">Docker</span>
+                </p>
             </div>
         </div>
     </div>
@@ -78,9 +83,6 @@
             <form method="post">
                 {% csrf_token %}
                 {{ form }}
-                <!-- {% for message in request.messages %}
-                <div class="alert alert-danger" role="alert">Error! {{ message }}</div>
-                {% endfor %} -->
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>
