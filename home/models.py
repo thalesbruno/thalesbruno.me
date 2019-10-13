@@ -3,6 +3,7 @@ from django.db import models
 
 class Technology(models.Model):
     title = models.CharField(max_length=20)
+    badge = models.CharField(max_length=20)
 
     class Meta:
         verbose_name_plural = 'Technologies'
