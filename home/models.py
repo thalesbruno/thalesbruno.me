@@ -3,17 +3,17 @@ from django.db import models
 
 class Tag(models.Model):
     COLORS = [
-        (0, 'primary'),
-        (1, 'secondary'),
-        (2, 'success'),
-        (3, 'danger'),
-        (4, 'warning'),
-        (5, 'info'),
-        (6, 'light'),
-        (7, 'dark')
+        ('primary', 'primary'),
+        ('secondary', 'secondary'),
+        ('success', 'success'),
+        ('danger', 'danger'),
+        ('warning', 'warning'),
+        ('info', 'info'),
+        ('light', 'light'),
+        ('dark', 'dark')
     ]
-    title = models.CharField(max_length=20)
-    badge = models.CharField(max_length=20, choices=COLORS)
+    title = models.CharField(max_length=15)
+    badge = models.CharField(max_length=15, choices=COLORS)
     
     def __str__(self):
         return self.title

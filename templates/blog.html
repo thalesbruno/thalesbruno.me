@@ -7,35 +7,17 @@
         <div class="col-9">
             <h1 class="display-3">My blog</h1>
             <!-- blog post -->
+            {% for post in posts %}
             <div class="row">
                 <div class="col-12">
-                    <span class="badge badge-warning">django</span>
-                    <h1>Blog post title</h1>
-                    <p>And so... This is the blog post overview
-                        Here we talk in few word what about is this post.
-                    </p>
+                    {% for tag in post.tags.all %}
+                    <span class="badge badge-{{ tag.badge }}">{{ tag.title }}</span>
+                    {% endfor %}
+                    <h1>{{ post.title }}</h1>
+                    <p>{{ post.overview }}</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <span class="badge badge-warning">django</span>
-                    <h1>Blog post title</h1>
-                    <h4 class="text-muted">Blog post subtitle here</h4>
-                    <p>And so... This is the blog post overview
-                        Here we talk in few word what about is this post.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <span class="badge badge-warning">django</span>
-                    <h1>Blog post title</h1>
-                    <h4 class="text-muted">Blog post subtitle here</h4>
-                    <p>And so... This is the blog post overview
-                        Here we talk in few word what about is this post.
-                    </p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="col-3">
             <div class="row mb-4">
@@ -54,18 +36,13 @@
             <div class="row">
                 <div class="col-12">
                     <h4>Tags</h4>
-                    <span class="badge badge-warning">django</span>
-                    <span class="badge badge-primary">python</span>
-                    <span class="badge badge-info">javascript</span>
-                    <span class="badge badge-success">docker</span>
-                    <span class="badge badge-secondary">productivity</span>
-                    <span class="badge badge-dark">trips</span>
-                    <span class="badge badge-info">devops</span>
-                    <span class="badge badge-light">kubernetes</span>
+                    {% for tag in tags %}
+                    <span class="badge badge-{{ tag.badge }}">{{ tag.title }}</span>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-{% endblock content %}
+{% endblock %}
