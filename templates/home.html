@@ -36,21 +36,23 @@
     <h2 id="worksSection">Works</h2>
     <div class="row mb-5">
         {% for work in works %}
-        <div class="col-3">
+        <div class="col-4">
             <div class="card">
-                <img class="card-img-top" src="{{ work.thumbnail.url }}" alt="Card image cap">
+                <img class="card-img-top" src="{{ work.thumbnail.url }}" alt="">
                 <div class="card-body">
                     {% for tag in work.tags.all %}
                     <span class="badge badge-{{ tag.badge }}">{{ tag.title }}</span>
                     {% endfor %}
                     <h4 class="card-title">
                         {{ work.title }}
-                        <a href="{{ work.site_url }}" class="h5 text-secondary card-link"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="{{ work.site_url }}" class="h5 text-secondary card-link"><i
+                                class="fas fa-external-link-alt"></i></a>
                     </h4>
                     <p class="card-text">
                         {{ work.overview }}
                     </p>
-                    <a href="{{ work.repository_url }}" target="_blank" class="h3 text-dark card-link"><i class="fab fa-git"></i></a>
+                    <a href="{{ work.repository_url }}" target="_blank" class="h3 text-dark card-link"><i
+                            class="fab fa-git"></i></a>
                 </div>
             </div>
         </div>
