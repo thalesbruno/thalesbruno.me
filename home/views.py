@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.mail import EmailMessage, BadHeaderError
 from .forms import ContactForm
+from .models import Work
 
 
 def home(request):
@@ -22,15 +23,19 @@ def home(request):
             except Exception as e:
                 print(e)
                 form = ContactForm()
+                works = Work.objects.all()
                 context = {
                     'form': form,
+                    'works': works,
                     'error_message': e
                 }
                 return render(request, 'home.html', context)
         return redirect('thanks')
     form = ContactForm()
+    works = Work.objects.all()
     context = {
         'form': form,
+        'works': works
     }
     return render(request, 'home.html', context)
 

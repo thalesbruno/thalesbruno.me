@@ -16,7 +16,7 @@
                             <span class="badge badge-{{ tag.badge }}">{{ tag.title }}</span>
                             {% endfor %}
                             <h2 class="card-title mb-0">
-                                {{ post.title }}
+                                <a href="#" class="text-dark">{{ post.title }}</a>
                             </h2>
                             <span class="text-muted">posted by {{ post.author }} at {{ post.timestamp }}</span>
                             <div class="card-text mt-2">
@@ -25,9 +25,9 @@
                         </div>
                         <div class="card-footer">
                             <div class="row">
-                                <div class="col-2"><i class="fas fa-clock"></i> 5 min</div>
+                                <div class="col-2"><i class="fas fa-clock"></i> 5 min read</div>
                                 <div class="col-8"></div>
-                                <div class="col-2">Read more</div>
+                                <div class="col-2"><a class="card-link text-dark" href="#">Read more <i class="fas fa-arrow-circle-right"></i></a></div>
                             </div>
                         </div>
                     </div>

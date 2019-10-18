@@ -35,52 +35,26 @@
 <div class="container">
     <h2 id="worksSection">Works</h2>
     <div class="row mb-5">
+        {% for work in works %}
         <div class="col-3">
             <div class="card">
-                <img class="card-img-top" src="{% static 'img/image_card.svg' %}" alt="Card image cap">
+                <img class="card-img-top" src="{{ work.thumbnail.url }}" alt="Card image cap">
                 <div class="card-body">
-                    <span class="badge badge-success">django</span>
+                    {% for tag in work.tags.all %}
+                    <span class="badge badge-{{ tag.badge }}">{{ tag.title }}</span>
+                    {% endfor %}
                     <h4 class="card-title">
-                        Donec vehicula
-                        <a href="#" class="h4 text-secondary card-link"><i class="fas fa-external-link-alt"></i></a>
+                        {{ work.title }}
+                        <a href="{{ work.site_url }}" class="h5 text-secondary card-link"><i class="fas fa-external-link-alt"></i></a>
                     </h4>
                     <p class="card-text">
-                        Cras interdum, tellus non placerat dapibus, justo magna consectetur mauris.
+                        {{ work.overview }}
                     </p>
-                    <a href="#" class="h3 text-dark card-link"><i class="fab fa-git"></i></a>
+                    <a href="{{ work.repository_url }}" target="_blank" class="h3 text-dark card-link"><i class="fab fa-git"></i></a>
                 </div>
             </div>
         </div>
-        <div class="col-3">
-            <div class="card">
-                <img class="card-img-top" src="{% static 'img/image_card.svg' %}" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Donec vehicula</h4>
-                    <p class="card-text">Cras interdum, tellus non placerat dapibus, justo magna consectetur mauris.</p>
-                    <a href="#" class="card-link">bibendum</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card">
-                <img class="card-img-top" src="{% static 'img/image_card.svg' %}" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Donec vehicula</h4>
-                    <p class="card-text">Cras interdum, tellus non placerat dapibus, justo magna consectetur mauris.</p>
-                    <a href="#" class="card-link">bibendum</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card">
-                <img class="card-img-top" src="{% static 'img/image_card.svg' %}" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Donec vehicula</h4>
-                    <p class="card-text">Cras interdum, tellus non placerat dapibus, justo magna consectetur mauris.</p>
-                    <a href="#" class="card-link">bibendum</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
     <!-- Contact section -->
     <h2 id="contactSection">Contact</h2>
