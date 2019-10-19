@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import EmptyPage, Paginator, PageNotAnInteger
 from .models import Post
 from home.models import Tag
@@ -25,3 +25,10 @@ def blog_home(request):
         'tags': tags,
     }
     return render(request, 'blog.html', context)
+
+def blog_post(request, id):
+    post = get_object_or_404(Post, id=id)
+    context = {
+        'post': post
+    }
+    return render(request, 'post.html', context)

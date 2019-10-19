@@ -3,13 +3,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from home.views import home, thanks
-from blog.views import blog_home
+from blog.views import blog_home, blog_post
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('thanks/', thanks, name='thanks'),
-    path('blog/', blog_home, name='blog_home')
+    path('blog/', blog_home, name='blog_home'),
+    path('blog/post/<id>/', blog_post, name='blog_post'),
 ]
 
 if settings.DEBUG:
