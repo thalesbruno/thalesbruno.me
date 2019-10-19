@@ -7,7 +7,7 @@
         <div class="col-9">
             <h1 class="display-3">My blog</h1>
             <!-- blog post -->
-            {% for post in posts %}
+            {% for post in queryset %}
             <div class="row mb-4">
                 <div class="col-12">
                     <div class="card">
@@ -27,13 +27,36 @@
                             <div class="row">
                                 <div class="col-2"><i class="fas fa-clock"></i> 5 min read</div>
                                 <div class="col-8"></div>
-                                <div class="col-2"><a class="card-link text-dark" href="#">Read more <i class="fas fa-arrow-circle-right"></i></a></div>
+                                <div class="col-2"><a class="card-link text-dark" href="#">
+                                        <i class="fas fa-book"></i> Read more
+                                    </a></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             {% endfor %}
+            <!-- begin paginator -->
+            {% if queryset.has_previous or queryset.has_next %}
+            <div class="row">
+                <div class="col-2 text-left">
+                    {% if queryset.has_previous %}
+                    <a class="text-dark" href="?{{ page_request_var }}={{ queryset.previous_page_number }}">
+                        <i class="h2 fas fa-arrow-circle-left"></i>
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="col-8"></div>
+                <div class="col-2 text-right">
+                    {% if queryset.has_next %}
+                    <a class="text-dark" href="?{{ page_request_var }}={{ queryset.next_page_number }}">
+                        <i class="h2 fas fa-arrow-circle-right"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+            <!-- end paginator -->
         </div>
         <div class="col-3">
             <div class="row mb-4">
