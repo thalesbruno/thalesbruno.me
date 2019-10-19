@@ -1,11 +1,8 @@
 Django==2.2.5
-Pillow==6.2.0
-psycopg2-binary==2.8.3
-pytz==2019.2
-sqlparse==0.3.0
-Django==2.2.5
 django-sendgrid-v5==0.8.0
+django-tinymce4-lite==1.7.5
 future==0.18.0
+jsmin==2.2.2
 Pillow==6.2.0
 psycopg2-binary==2.8.3
 python-http-client==3.2.1
