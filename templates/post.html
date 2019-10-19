@@ -6,8 +6,29 @@
 <div class="container my-4">
     <div class="row">
         <div class="col-9">
-            <h1>{{ post.title }}</h1>
-            {{ post.content | safe }}
+            <div class="row">
+                {% for tag in post.tags.all %}
+                <span class="badge badge-{{ tag.badge }}">{{ tag.title }}</span>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <h1 class="mb-0">{{ post.title }}</h1>
+            </div>
+            <div class="row">
+                <span class="text-muted">
+                    Posted by {{ post.author.user.username }} at {{ post.timestamp }}
+                </span>
+            </div>
+            <div class="row">
+                <span class="text-muted">
+                    Edited by {{ post.author.user.username }} at {{ post.timestamp }}
+                </span>
+            </div>
+            <div class="row mt-3">
+                <div class="post_content">
+                    {{ post.content | safe }}
+                </div>
+            </div>
         </div>
         <div class="col-3"></div>
     </div>
