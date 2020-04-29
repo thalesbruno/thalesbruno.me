@@ -1,4 +1,4 @@
-Django==2.2.5
+Django==2.2.8
 django-sendgrid-v5==0.8.0
 django-tinymce4-lite==1.7.5
 future==0.18.0
